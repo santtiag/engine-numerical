@@ -54,8 +54,12 @@ def r_nonlinear_potential(data: dict):
     return {
             'general formula': 'y = A * x^B',
             'array scheme': "[[Σx', n], [Σx'^2, Σx']] [A', B'] = [Σy', Σx'y']",
-            'solved array scheme': f'[[{solved_arr["Σx\'"]}, {solved_arr["n"]}], [{solved_arr["Σx\'^2"]}, {solved_arr["Σx\'"]}], [{solved_arr["A\'"]}, {solved_arr["B\'"]}] = [{solved_arr["Σy\'"]}, {solved_arr["Σx\'y\'"]}]',
-
+            'solved array scheme': '[[{0}, {1}], [{2}, {3}], [{4}, {5}]] = [{6}, {7}]'.format(
+    solved_arr["Σx'"], solved_arr["n"], 
+    solved_arr["Σx'^2"], solved_arr["Σx'"],
+    solved_arr["A'"], solved_arr["B'"],
+    solved_arr["Σy'"], solved_arr["Σx'y'"]
+),
             # f"[[{solved_arr["Σx'"]}, {solved_arr['n']}], [{solved_arr["Σx'^2"]}, {solved_arr["Σx'"]}], [{solved_arr["A'"]}, {solved_arr["B'"]}] = [{solved_arr["Σy'"]}, {solved_arr["Σx'y'"]}]",
             'answer': ans
             }
