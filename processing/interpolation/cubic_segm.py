@@ -9,8 +9,8 @@ def get_delta(x_values, y_values):
     x_delta = []
     y_delta = []
     for i in range(len(x_values)-1):
-    # ISSUE: where is deprecated in numpy
-        if i+1 == np.where(len(x_values)):
+        if i+1 in np.where(x_values)[0]:
+        # if i+1 == np.where(len(x_values)): 
             break
         x_delta.append(x_values[i+1] - x_values[i])
         y_delta.append(y_values[i+1] - y_values[i])
