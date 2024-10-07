@@ -10,7 +10,7 @@ def get_delta(x_values, y_values):
     y_delta = []
     for i in range(len(x_values)-1):
         if i+1 in np.where(x_values)[0]:
-        # if i+1 == np.where(len(x_values)): 
+        # if i+1 == np.where(len(x_values)):
             break
         x_delta.append(x_values[i+1] - x_values[i])
         y_delta.append(y_values[i+1] - y_values[i])
@@ -117,7 +117,7 @@ def get_zero_array(e):
     n = len(e)
 
     # Eliminar el primer elemento de la primera sublista
-    e[0].pop(0)
+    e[1].pop(0)
 
     # Eliminar el último elemento de la última sublista
     e[-1].pop(-1)
