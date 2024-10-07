@@ -9,8 +9,9 @@ def get_delta(x_values, y_values):
     x_delta = []
     y_delta = []
     for i in range(len(x_values)-1):
-        if i+1 in np.where(x_values)[0]:
+        # if i+1 in np.where(x_values)[0]:
         # if i+1 == np.where(len(x_values)):
+        if i+1 == len(x_values):
             break
         x_delta.append(x_values[i+1] - x_values[i])
         y_delta.append(y_values[i+1] - y_values[i])
@@ -60,6 +61,7 @@ def calculate_B_values(x, y):
         indep.append((y[j+1]/x[j+1]) - (y[j]/x[j]))
         i = i + 1
         j = j + 1
+
     # print(f"Bi • Δxi/3 + Bi+1 • 2/3 • (Δxi + Δxi+1) + Bi+2 • (Δxi+1/3) =  (Δyi+1/Δxi+1) - (Δyi/Δxi)")
     # j = 0
     # i = 1
@@ -98,7 +100,7 @@ def calculate_B_values(x, y):
     #     i = i + 1
     #     j = j + 1
 
-    # INFO: Round two
+    # INFO: Round
 
     b_matriz = np.array(get_zero_array(equation_B))
 
@@ -117,7 +119,7 @@ def get_zero_array(e):
     n = len(e)
 
     # Eliminar el primer elemento de la primera sublista
-    e[1].pop(0)
+    e[0].pop(0)
 
     # Eliminar el último elemento de la última sublista
     e[-1].pop(-1)

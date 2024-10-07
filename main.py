@@ -34,7 +34,7 @@ app.add_middleware(
 
 url_eng = URL('/engine')
 
-# INFO: INTERPOLATION 
+# INFO: INTERPOLATION
 @app.post(url_eng.home.inter.quad_seg, tags=['Interpolation'])
 async def process_i_quadratic_segm(data: dict):
     result = i_quadratic_segm(data)
