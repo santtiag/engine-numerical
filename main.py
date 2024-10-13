@@ -4,7 +4,12 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 from pandas.io.parquet import json
 
+from processing.definite_integration.cubic_approximation import di_cubic_approximation
+from processing.definite_integration.parabola import di_parabola
+from processing.definite_integration.rectangle import di_rectangle
+from processing.definite_integration.trapezium import di_trapezium
 from processing.interpolation.cubic_segm import i_cubic_segm
+from processing.interpolation.lin_segm import i_linear_segm
 from processing.interpolation.quadratic_segm import i_quadratic_segm
 from processing.regression.linear import r_linear
 from processing.regression.nonlinear.exponential import r_nonlinear_exponential
@@ -35,6 +40,11 @@ app.add_middleware(
 url_eng = URL('/engine')
 
 # INFO: INTERPOLATION
+@app.post(url_eng.home.inter.lin_seg, tags=['Interpolation'])
+async def process_i_lin_segm(data: dict):
+    result = i_linear_segm(data)
+    return JSONResponse(content=jsonable_encoder(result), status_code=200)
+
 @app.post(url_eng.home.inter.quad_seg, tags=['Interpolation'])
 async def process_i_quadratic_segm(data: dict):
     result = i_quadratic_segm(data)
@@ -44,6 +54,7 @@ async def process_i_quadratic_segm(data: dict):
 async def process_i_cubic_segm(data: dict):
     result = i_cubic_segm(data)
     return JSONResponse(content=jsonable_encoder(result), status_code=200)
+
 
 # INFO: REGRESSION
 @app.post(url_eng.home.reg.lin, tags=['Regression'])
@@ -64,4 +75,26 @@ async def process_r_nonlinear_potential(data: dict):
 @app.post(url_eng.home.reg.nonlin.poly, tags=['Regression'])
 async def process_r_nonlinear_polynomial(data: dict):
     result = r_nonlinear_polynomial(data)
+    return JSONResponse(content=jsonable_encoder(result), status_code=200)
+
+
+# DEFINITE INTEGRATION
+@app.post(url_eng.home.d_i.rect, tags=['Definite Integraion'])
+async def process_di_rectangle(data: dict):
+    result = di_rectangle(data)
+    return JSONResponse(content=jsonable_encoder(result), status_code=200)
+
+@app.post(url_eng.home.d_i.trap, tags=['Definite Integraion'])
+async def process_di_trapezium(data: dict):
+    result = di_trapezium(data)
+    return JSONResponse(content=jsonable_encoder(result), status_code=200)
+
+@app.post(url_eng.home.d_i.para, tags=['Definite Integraion'])
+async def process_di_parabola(data: dict):
+    result = di_parabola(data)
+    return JSONResponse(content=jsonable_encoder(result), status_code=200)
+
+@app.post(url_eng.home.d_i.ca, tags=['Definite Integraion'])
+async def process_di_cubic_approximattion(data: dict):
+    result = di_cubic_approximation(data)
     return JSONResponse(content=jsonable_encoder(result), status_code=200)

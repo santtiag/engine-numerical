@@ -25,7 +25,7 @@ def calculate_B_values(x, y):
     equation_B = []
     b_answer = {}
 
-    print(f"Bi • Δxi/3 + Bi+1 • 2/3 • (Δxi + Δxi+1) + Bi+2 • (Δxi+1/3) =  (Δyi+1/Δxi+1) - (Δyi/Δxi)")
+    print(f"Bi \\cdot Δxi/3 + Bi+1 \\cdot 2/3 \\cdot (Δxi + Δxi+1) + Bi+2 \\cdot (Δxi+1/3) =  (Δyi+1/Δxi+1) - (Δyi/Δxi)")
     j = 0
     i = 1
     for _ in range(len(x)):
@@ -62,15 +62,15 @@ def calculate_B_values(x, y):
         i = i + 1
         j = j + 1
 
-    # print(f"Bi • Δxi/3 + Bi+1 • 2/3 • (Δxi + Δxi+1) + Bi+2 • (Δxi+1/3) =  (Δyi+1/Δxi+1) - (Δyi/Δxi)")
+    # print(f"Bi \\cdot Δxi/3 + Bi+1 \\cdot 2/3 \\cdot (Δxi + Δxi+1) + Bi+2 \\cdot (Δxi+1/3) =  (Δyi+1/Δxi+1) - (Δyi/Δxi)")
     # j = 0
     # i = 1
     # for _ in range(len(x)):
     #     if i == 1:
-    #         equation1 = f"B{i} • Δx{i}/3 + B{i+1} • 2/3 (Δx{i} + Δx{i+1}) + B{i+2} • (Δx{i+1}/3) = (Δy{i+1}/Δx{i+1} - (Δy{i}/Δx{i}))"
-    #         equation2 = f"B{i} • {x[j]}/3 + B{i+1} • 2/3 • ({x[j]} + {x[j+1]}) + B{i+2} • ({x[j+1]}/3) = ({y[j+1]}/{x[j+1]}) - ({y[j]}/{x[j]}))"
-    #         # equation3 = f"///B{i} • {x[j]/3}/// + B{i+1} • {2/3 * (x[j] + x[j+1])}  + B{i+2} • {x[j+1]/3} = {(y[j+1]/x[j+1]) - (y[j]/x[j])}"
-    #         equation3 = "\\cancel{" + f"B{i} • {x[j]/3}" + "}" + f"B{i+1} • {2/3 * (x[j] + x[j+1])}  + B{i+2} • {x[j+1]/3} = {(y[j+1]/x[j+1]) - (y[j]/x[j])}"
+    #         equation1 = f"B{i} \\cdot Δx{i}/3 + B{i+1} \\cdot 2/3 (Δx{i} + Δx{i+1}) + B{i+2} \\cdot (Δx{i+1}/3) = (Δy{i+1}/Δx{i+1} - (Δy{i}/Δx{i}))"
+    #         equation2 = f"B{i} \\cdot {x[j]}/3 + B{i+1} \\cdot 2/3 \\cdot ({x[j]} + {x[j+1]}) + B{i+2} \\cdot ({x[j+1]}/3) = ({y[j+1]}/{x[j+1]}) - ({y[j]}/{x[j]}))"
+    #         # equation3 = f"///B{i} \\cdot {x[j]/3}/// + B{i+1} \\cdot {2/3 * (x[j] + x[j+1])}  + B{i+2} \\cdot {x[j+1]/3} = {(y[j+1]/x[j+1]) - (y[j]/x[j])}"
+    #         equation3 = "\\cancel{" + f"B{i} \\cdot {x[j]/3}" + "}" + f"B{i+1} \\cdot {2/3 * (x[j] + x[j+1])}  + B{i+2} \\cdot {x[j+1]/3} = {(y[j+1]/x[j+1]) - (y[j]/x[j])}"
     #         equations.append((equation1, equation2, equation3))
     #         aux = [(x[j]/3), (2/3*(x[j]+x[j+1])), (x[j+1]/3)]
     #         equation_B.append(aux)
@@ -79,9 +79,9 @@ def calculate_B_values(x, y):
     #         j = j + 1
     #         continue
     #     elif i == len(x)-1:
-    #         equation1 = f"B{i} • Δx{i}/3 + B{i+1} • 2/3 (Δx{i} + Δx{i+1}) + B{i+2} • (Δx{i+1}/3) = (Δy{i+1}/Δx{i+1} - (Δy{i}/Δx{i}))"
-    #         equation2 = f"B{i} • {x[j]}/3 + B{i+1} • 2/3 • ({x[j]} + {x[j+1]}) + B{i+2} • ({x[j+1]}/3) = ({y[j+1]}/{x[j+1]}) - ({y[j]}/{x[j]}))"
-    #         equation3 = f"B{i} • {x[j]/3} + B{i+1} • {2/3 * (x[j] + x[j+1])}  +" + "\\cancel{" + f"B{i+2} • {x[j+1]/3}" + "}" + f" = {(y[j+1]/x[j+1]) - (y[j]/x[j])}"
+    #         equation1 = f"B{i} \\cdot Δx{i}/3 + B{i+1} \\cdot 2/3 (Δx{i} + Δx{i+1}) + B{i+2} \\cdot (Δx{i+1}/3) = (Δy{i+1}/Δx{i+1} - (Δy{i}/Δx{i}))"
+    #         equation2 = f"B{i} \\cdot {x[j]}/3 + B{i+1} \\cdot 2/3 \\cdot ({x[j]} + {x[j+1]}) + B{i+2} \\cdot ({x[j+1]}/3) = ({y[j+1]}/{x[j+1]}) - ({y[j]}/{x[j]}))"
+    #         equation3 = f"B{i} \\cdot {x[j]/3} + B{i+1} \\cdot {2/3 * (x[j] + x[j+1])}  +" + "\\cancel{" + f"B{i+2} \\cdot {x[j+1]/3}" + "}" + f" = {(y[j+1]/x[j+1]) - (y[j]/x[j])}"
     #         equations.append((equation1, equation2, equation3))
     #         aux = [(x[j]/3), (2/3*(x[j]+x[j+1])), (x[j+1]/3)]
     #         equation_B.append(aux)
@@ -90,9 +90,9 @@ def calculate_B_values(x, y):
     #         j = j + 1
     #         break
 
-    #     equation1 = f"B{i} • Δx{i}/3 + B{i+1} • 2/3 (Δx{i} + Δx{i+1}) + B{i+2} • (Δx{i+1}/3) = (Δy{i+1}/Δx{i+1} - (Δy{i}/Δx{i}))"
-    #     equation2 = f"B{i} • {x[j]}/3 + B{i+1} • 2/3 • ({x[j]} + {x[j+1]}) + B{i+2} • ({x[j+1]}/3) = ({y[j+1]}/{x[j+1]}) - ({y[j]}/{x[j]}))"
-    #     equation3 = f"B{i} • {x[j]/3} + B{i+1} • {2/3 * (x[j] + x[j+1])}  + B{i+2} • {x[j+1]/3} = {(y[j+1]/x[j+1]) - (y[j]/x[j])}"
+    #     equation1 = f"B{i} \\cdot Δx{i}/3 + B{i+1} \\cdot 2/3 (Δx{i} + Δx{i+1}) + B{i+2} \\cdot (Δx{i+1}/3) = (Δy{i+1}/Δx{i+1} - (Δy{i}/Δx{i}))"
+    #     equation2 = f"B{i} \\cdot {x[j]}/3 + B{i+1} \\cdot 2/3 \\cdot ({x[j]} + {x[j+1]}) + B{i+2} \\cdot ({x[j+1]}/3) = ({y[j+1]}/{x[j+1]}) - ({y[j]}/{x[j]}))"
+    #     equation3 = f"B{i} \\cdot {x[j]/3} + B{i+1} \\cdot {2/3 * (x[j] + x[j+1])}  + B{i+2} \\cdot {x[j+1]/3} = {(y[j+1]/x[j+1]) - (y[j]/x[j])}"
     #     equations.append((equation1, equation2, equation3))
     #     aux = [(x[j]/3), (2/3*(x[j]+x[j+1])), (x[j+1]/3)]
     #     equation_B.append(aux)
@@ -148,8 +148,8 @@ def calculate_A_values(b, x_delta):
     print('\nAi = (Bi+1 - Bi) / 3Δxi')
 
     for i in range(len(x_delta)):
-        a[f'A{i+1}-1'] = f'(B{i+2} - B{i+1}) / 3 • Δx{i+1}'
-        a[f'A{i+1}-2'] = f'({b[i+1]} - {b[i]}) / 3 • {x_delta[i]}'
+        a[f'A{i+1}-1'] = f'(B{i+2} - B{i+1}) / 3 \\cdot Δx{i+1}'
+        a[f'A{i+1}-2'] = f'({b[i+1]} - {b[i]}) / 3 \\cdot {x_delta[i]}'
         a[f'A{i+1}-3'] = f'{(b[i+1] - b[i])/(3*x_delta[i])}'
         a_answer.append((b[i+1] - b[i])/(3*x_delta[i]))
     return a, a_answer
@@ -159,13 +159,13 @@ def calculate_A_values(b, x_delta):
 def calculate_C_values(b, x_delta, y_delta):
     c = {}
     c_answer = []
-    print('\nCi = (Δyi/Δxi) - (Δxi/3) • (2Bi + Bi+1)')
+    print('\nCi = (Δyi/Δxi) - (Δxi/3) \\cdot (2Bi + Bi+1)')
 
     for i in range(len(x_delta)):
         if x_delta[i] == 0:
             raise HTTPException(status_code=404, detail='A value of x cannot be equal to the consecutive one')
-        c[f'C{i+1}-1'] = f'(Δy{i+1}/Δx{i+1}) - (Δx{i+1}/3) • (2B{i+1} + B{i+2})'
-        c[f'C{i+1}-2'] = f'{y_delta[i]}/{x_delta[i]}) - ({x_delta[i]}/3) • (2 • {b[i]} + {b[i+1]})'
+        c[f'C{i+1}-1'] = f'(Δy{i+1}/Δx{i+1}) - (Δx{i+1}/3) \\cdot (2B{i+1} + B{i+2})'
+        c[f'C{i+1}-2'] = f'{y_delta[i]}/{x_delta[i]}) - ({x_delta[i]}/3) \\cdot (2 \\cdot {b[i]} + {b[i+1]})'
         c[f'C{i+1}-3'] = f'{(y_delta[i] / x_delta[i]) - (x_delta[i]/3) * (2 * b[i] + b[i+1])}\n'
         c_answer.append((y_delta[i] / x_delta[i]) - (x_delta[i]/3) * (2 * b[i] + b[i+1]))
     return c, c_answer
@@ -190,55 +190,6 @@ def calculate_P_values(a, b, c, d, x_values):
     for i in range(len(x_values)-1):
         p[f'P{i+1}'] = f'{a[i]}(x-{x_values[i]})^3 + {b[i]}(x-{x_values[i]})^2 + {c[i]}(x-{x_values[i]}) + {d[i]} [{x_values[i]}, {x_values[i+1]}]'
     return p
-
-def main(data: dict):
-    x = data['x']
-    y = data['y']
-    x_values = np.array(x)
-    y_values = np.array(y)
-
-    # NOTE: Cambio de datos
-    # Pruba
-    # x_values = np.array([1, 1.8, 3.8, 4.5, 6])
-    # y_values = np.array([0, 2.4, 4.2, 5, 6.5])
-
-    x_delta, y_delta = get_delta(x_values, y_values)
-    delta_values = {'x delta': x_delta, 'y delta': y_delta}
-    print(pd.DataFrame({'Δx':x_delta, 'Δy':y_delta}))
-
-    equation_1, equation_B, indep = calculate_B_values(x_delta, y_delta)
-
-    b_matriz_zero = get_zero_array(equation_B)
-
-    for i in equation_1:
-        print(f'Ecuación #')
-        for j in i: print(j)
-        print('\n')
-
-    print(f'Independientes:\n {indep}\n')
-
-    b_matriz = np.array(b_matriz_zero)
-
-    print(f'B: \n{b_matriz}\n')
-
-    b_inv = np.linalg.inv(b_matriz)
-    print(f'Ecuaciones MINVERSA:\n{b_inv}\n')
-
-    indep_ = np.array(indep)
-    b_mmult = np.dot(b_inv, indep_)
-    print(f'MMULT:\n{b_mmult}\n')
-
-    b = np.pad(b_mmult,(1,1), 'constant', constant_values=(0, 0))
-    j = 1
-    for i in b:
-        print(f'B{j}: {i}')
-        j=j+1
-
-    a = calculate_A_values(b, x_delta)
-    c = fifth_func(b, x_delta, y_delta)
-    d = sixth_func(y_values)
-
-    seventh_func(a, b, c, d, x_values)
 
 def i_cubic_segm(data: dict):
     x = data['x']
