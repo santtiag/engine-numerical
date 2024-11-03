@@ -3,8 +3,8 @@ import numpy as np
 def calculate(x, y):
     procedure = {}
     forms =[
-        'A = \\frac{{3cΔx}}{{8}} \\cdot [f(x_1) + 3 \\cdot f(x_2) + 3 * f(x_3) + f(x_4)]',
-        'Δx = x_4 - x_1',
+        'A = \\frac{{3c\\Delta x}}{{8}} \\cdot [f(x_1) + 3 \\cdot f(x_2) + 3 * f(x_3) + f(x_4)]',
+        '\\Delta x = x_4 - x_1',
     ]
 
     x_ = (x[-1] - x[0])/3

@@ -31,6 +31,6 @@ def di_parabola(data: dict):
 
     procedure = calculate(x, y)
     return {
-        'form': 'Δx/3 \\cdot (f(x_1) + 4 \\cdot f(x_2) + f(x_3))',
+        'form': '\\frac{{\\Delta x}}{{3}} \\cdot (f(x_1) + 4 \\cdot f(x_2) + f(x_3))',
         'procedure': procedure
     }
